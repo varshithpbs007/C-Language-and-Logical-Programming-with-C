@@ -327,6 +327,87 @@ void main()
     
 15. /* To check if the entered number is a palindrome or not */
 
+#include<stdio.h>
+void main()
+{
+    int n, r, temp,  sum = 0;
+    
+    printf("Enter the number to check if its a palindrome : ");
+    scanf("%d",&n);
+    
+    temp = n;
+    
+    while(n > 0)
+    {
+        r = n % 10;
+        sum = sum * 10 + r;
+        n = n /10;
+    }
+    
+    n = temp;
+    
+    if(n == sum)
+    {
+        printf("The number entered is a palindrome");
+    }
+    else
+    {
+         printf("The number entered is NOT a palindrome");
+    }
+   
+}
+
+
+16./* To check if the entered number is a STRONG number or not */
+/* STRONG number --> (the sum of factorials of the digits of number) = (The number itself) 
+   Ex: n = 145 --> (1!+4!+5!) = (145) => 145 is a STRONG number */
+
+#include<stdio.h>
+void main()
+{
+   int n, r, i, fact,temp, sum = 0 ;
+   
+   printf("Enter a number to check its a STRONG number or not :");
+   scanf("%d",&n);
+   
+   temp = n;
+   
+   while(n>0)
+   {
+       r = n % 10;
+       fact = 1;
+       for(i = r ; i >= 1 ; i--)
+       {
+           fact = fact * i;
+       }
+       sum = sum + fact;
+       n = n / 10;
+   }
+   n = temp;
+   if(n == sum)
+   {
+       printf("The number %d is a STRONG number");
+   }
+   else
+   {
+       printf("The number %d is NOT a STRONG number");
+   }
+  
+}
+
+
+
+   
+
+17.
+
+
+
+
+
+
+
+    
 
 
 
