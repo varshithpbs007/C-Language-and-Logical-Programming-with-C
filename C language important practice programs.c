@@ -399,7 +399,44 @@ void main()
 
    
 
-17.
+17. /* Program to check if the entered number is a Armstrong number
+
+Armstrong number --> Sum of cubes of the digits of the number = number itself.
+Ex: n =154 --> 1^3 + 5^3 + 3^3 = 1+125+27 = 153 = n , So, 153 is an Armstrong number
+Ex: 0,1,153,370,371 etc, are some of the 3 digit Armstrong numbers
+
+---NOTE: Note that for a 4 digit number like 1634,9474 to check if its an Armstrong number we have to raise each digits power to 4 and them sum them to check if its equal to the number itself.
+   Ex: n = 1634 --> 1^4 + 6^4 + 3^4 + 4^4 = 1634 = n, So 1634 is an Armstrong number.
+*/
+#include <stdio.h>
+void main() 
+{
+    int n,r,cube,sum=0,temp;
+    
+    printf("Enter a positive integer : ");
+    scanf("%d",&n);
+    temp = n;
+    while(n>0)
+    {
+        r = n % 10;
+        cube = r * r * r;
+        sum = sum + cube;
+        n = n / 10;
+    }
+    n = temp;
+    
+    if(n == sum)
+    {
+        printf("Entered integer is an ARMSTRONG number\n");
+    }
+    else
+    {
+        printf("Entered integer is NOT an ARMSTRONG number\n");
+    }
+
+}
+
+18.
 
 
 
