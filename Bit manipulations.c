@@ -50,6 +50,58 @@ int main()
 
 
 
-// 3. 
+// 3. /* Program to isolate the right most set bit and make remaining 0's in binary representation of the inputted number by the user.
+---> Trick used is n = n & -n where (-n = ~n +1)*/
 
+#include<stdio.h>
+
+int rightmostsetbit(int n)
+{
+    return (n & -n);
+}
+int main()
+{
+    int n;
+    
+    printf("Enter a number : ");
+    scanf("%d",&n);
+    
+    printf("%d After the right most set bit is isoalted is %d",n, rightmostsetbit(n));
+}
+
+
+
+// 4. /* Program to swap two numbers without using a temporary variable.
+Concept : Use XOR properties like 1. a ^ b ^ a = 0 ( because a^ a = 0)
+                                  2. a ^ a = b ^ b = 0
+                                  3. a ^ 0 = a , b ^ 0 = b */
+
+#include<stdio.h>
+
+void swap(int *x, int *y) //varibles are passed by reference so that the orignal values can be modified at the address passed.
+{
+    *x = *x ^ *y;
+    *y = *x ^ *y;
+    *x = *x ^ *y;
+    
+
+    
+}
+int main()
+{
+    int a,b;
+    
+    printf("Enter numbers to swap : \n");
+    scanf("%d %d",&a,&b);
+    
+    printf("variables before swapping : %d, %d\n",a,b);
+    swap(&a, &b);
+    printf("Variables after swapping : %d, %d", a,b);
+    
+    return 0;
+}
+
+
+
+// 5.
 
