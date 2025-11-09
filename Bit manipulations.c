@@ -104,5 +104,29 @@ int main()
 
 
 
-// 5.
+// 5. /* Program to check if two entered numbers have opposite signs */
+
+#include<stdio.h>
+int main()
+{
+    int a,b;
+    
+    printf("Enter numbers to check : \n");
+    scanf("%d %d",&a,&b);
+    
+    if((a ^ b) < 0)
+    {
+        printf("%d and %d have DIFFERENT SIGNS",a,b);
+    }
+    else
+    {
+         printf("%d and %d have SAME SIGNS",a,b);
+    }
+    
+     return 0;
+}
+
+
+
+// 6.
 
