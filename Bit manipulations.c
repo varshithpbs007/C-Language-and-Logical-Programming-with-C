@@ -80,6 +80,7 @@ Concept : Use XOR properties like 1. a ^ b ^ a = 0 ( because a^ a = 0)
 
 void swap(int *x, int *y) //varibles are passed by reference so that the orignal values can be modified at the address passed.
 {
+    if (x == y) return;  // Important: avoid if both point to same location
     *x = *x ^ *y;
     *y = *x ^ *y;
     *x = *x ^ *y;
