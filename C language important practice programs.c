@@ -436,8 +436,31 @@ void main()
 
 }
 
-18.
+18. // Program to swap two variables using pointers from taking input from the user
+#include <stdio.h>
+void swap(int*,int*); //Function prototype must have a semicolon at the end
 
+int main() {
+    
+    int a = 0 ,b = 0 ;
+    printf("Enter the values to be swapped :\n");
+    scanf("%d %d", &a, &b);
+    int *x, *y;
+    x = &a;
+    y = &b;
+    swap(x,y);
+    printf("Values after swapping are : %d %d",a,b);
+    
+  return 0;  
+
+}
+void swap(int* x,int* y){
+    *x = *x ^ *y;
+    *y = *x ^ *y;
+    *x = *x ^ *y;
+}
+
+19. 
 
 
 
