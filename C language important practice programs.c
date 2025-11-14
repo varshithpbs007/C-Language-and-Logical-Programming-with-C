@@ -460,7 +460,42 @@ void swap(int* x,int* y){
     *x = *x ^ *y;
 }
 
-19. 
+
+
+19. /* Demonstrate difference between:
+   1) Constant pointer
+   2) Pointer to a constant
+
+   GOLDEN RULE: Look where "const" is placed.
+   - If "const" is after '*'  => pointer is constant:  int *const p;
+   - If "const" is before '*' => value is constant:    const int *p;
+*/
+
+#include <stdio.h>
+
+int main(void) {
+    int a = 5, b = 7;
+
+    /* 1) Constant pointer (pointer itself is constant, value can change) */
+    int *const q = &b;   // q always points to b; q cannot be reassigned
+    *q = 8;              // allowed: modifies the value at the pointed location (b)
+
+    // q = &a;           // error if uncommented: assignment of read-only variable 'q'
+
+    /* 2) Pointer to a constant (value is protected via this pointer; pointer can change) */
+    const int *p = &a;   // p points to a value that cannot be modified through p
+    a = 6;               // allowed: modifying 'a' directly is fine
+
+    // *p = 7;           // error if uncommented: assignment of read-only location '*p'
+    // p = &b;           // allowed: p can be repointed to another int
+
+    printf("a = %d, b = %d\n", a, b);
+    return 0;
+}
+
+
+
+20. 
 
 
 
