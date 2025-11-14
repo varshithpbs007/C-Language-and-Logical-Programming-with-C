@@ -495,7 +495,119 @@ int main(void) {
 
 
 
-20. 
+20. // Demonstration of malloc(), realloc(), free()
+
+//Inlcuding all the necessary libraries
+#include <stdio.h>
+#include <stdlib.h>
+#include <string.h>
+
+// Defining a structure to store employee details
+struct employee {
+    int empid ;
+    char empname[20];
+    float empsal ;
+    
+};
+
+//using typedef for convinience to create an alias name for the userdefined data type
+typedef struct employee emp;
+
+// main function
+int main(void)
+{
+    
+    emp *p = NULL;
+    int current_size = 4;
+    int new_size = 5;
+    
+    // --- 1. malloc() Demonstration: Allocate memory for 4 employees ---
+    printf("--- 1.using malloc() ---\n");
+    // Allocating memory for 4 employees
+    p = (emp*)malloc(current_size*sizeof(emp));
+    
+    //  Checking if allocation was successful
+    if(p == NULL)
+    {
+        perror("Initial malloc failed");
+        return EXIT_FAILURE;
+    }
+    
+    // Initializing the first element (p[0]) 
+    p[0].empid = 101;
+    strncpy(p[0].empname,"Sameer",sizeof(p[0].empname)-1);
+    p[0].empname[sizeof(p[0].empname)-1] = '\0'; //ensuring null termination for the empname string
+    p[0].empsal = 50000;
+    
+    // Initializing the second element (p[1])
+    p[1].empid = 102;
+    strncpy(p[1].empname, "Rajeev", sizeof(p[1].empname)-1);
+    p[1].empname[sizeof(p[1].empname)-1] = '\0';
+    p[1].empsal = 50000;
+    
+    // Initializing the third element (p[2])
+    p[2].empid = 103;
+    strncpy(p[2].empname, "Mayank", sizeof(p[2].empname) -1);
+    p[2].empname[sizeof(p[2].empname - 1)] = '\0';
+    p[2].empsal = 50000;
+     
+    // Initializing the fourth element (p[3])
+    p[3].empid = 104;
+    strncpy(p[3].empname, "Apoorva" , sizeof(p[3].empname) -1);
+    p[3].empname[sizeof(p[3].empname -1)] = '\0';
+    p[3].empsal = 50000;
+    
+    printf("Initial allocation size = %d elements\n",current_size);
+    printf("Employee 1 (p[0]) : ID = %d, Name = %s, Salary = %.2f\n",p[0].empid, p[0].empname, p[0].empsal);
+    printf("Employee 2 (p[1]) : ID = %d, Name = %s, Salary = %.2f\n",p[1].empid, p[1].empname, p[1].empsal);
+    printf("Employee 3 (p[2]) : ID = %d, Name = %s, Salary = %.2f\n",p[2].empid, p[2].empname, p[2].empsal);
+    printf("Employee 4 (p[3]) : ID = %d, Name = %s, Salary = %.2f\n",p[3].empid, p[3].empname, p[3].empsal);
+    
+    // --- 2. realloc() Demonstration: Resize memory to 5 employees
+    printf("\n --- 2. Using realloc() ---\n");
+    printf("Resizing memory to %d elements...\n",new_size);
+    
+    // reallocating memory for 5 'emp' structures
+    emp* temp = (emp*)realloc(p, new_size*sizeof(emp));
+    
+    // Checking if reallocation is successful
+    if(temp == 0)
+    {
+        perror("Reallocation failed");
+        // if reallocation fails, the original pointer 'p' is still valid, so we free it.
+        free(p);
+        return EXIT_FAILURE;
+    }
+    
+    // if realloc successful, update the pointer 'p'
+    p = temp;
+    
+    // Initializing the newly allocated 5th element (p[4])
+    p[4].empid = 105;
+    strncpy(p[4].empname, "Lakshmi", sizeof(p[4].empname) -1);
+    p[4].empname[sizeof(p[4].empname)-1] = '\0';
+    p[4].empsal = 50000;
+    
+    printf("Memory successfully reallocated.\n");
+    printf("Checking if old data is preserved...\n");
+    printf("Employee 1 (p[0]) : ID = %d, Name = %s, Salary = %.2f\n",p[0].empid, p[0].empname, p[0].empsal);
+    printf("Checking newly initialized element...\n");
+    printf("Employee 5 (p[4]) : ID = %d, Name = %s, Salary = %.2f\n",p[4].empid, p[4].empname, p[4].empsal);
+    
+    // --- 3. free() Demonstration: Release the allocated memory ---
+    printf("\n --- 3. Using free() ---\n");
+    free(p); //If we wont free it may become a dangling pointer
+    p = NULL; //After freeing we need to make it null to avoid it becoming a wild pointer
+    printf("Memory Seccessfully freed.\n");
+    
+    return EXIT_SUCCESS;
+    
+    
+}
+
+
+
+21. 
 
 
 
