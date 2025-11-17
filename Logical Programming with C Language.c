@@ -107,4 +107,34 @@ int main() {
 }
 
 
-5.
+5. /*-------- Sum of first N numbers ------ */
+#include <stdio.h>
+
+int main() {
+    int n,temp, sum = 0;
+    printf("Enter n :");
+    scanf("%d",&n);
+    temp = n;
+
+    if (n < 1)
+    {
+        printf("Please enter positive integers\n");
+        return 0; // to stop execution to go futher if n < 1
+    }
+    /* while(n > 0)
+    {
+        sum = sum + n;
+        n--;
+    } */
+    
+    /* solution can be done in o(1) by using the sum of 1st n integers formula... sum = n * (n + 1) / 2      */
+    
+    sum = temp * (temp + 1) / 2 ;
+    
+    printf("Sum of 1st  %d integers is = %d", temp,sum);
+    
+    return 0;
+}
+
+
+6.
