@@ -81,4 +81,30 @@ int main() {
 }
 
 
-4.
+4. /*-------- Biggest of two integers ------ */
+#include <stdio.h>
+
+int main() {
+    
+    int a,b;
+    printf("Enter two integers to check which is bigger (a b) :");
+    scanf("%d %d",&a,&b);
+    
+    if (a == b)
+    {
+        printf(" a = %d and b = %d are equal\n",a,b);
+    }
+    else if (a > b)
+    {
+        printf("a = %d is bigger than b = %d\n",a,b);
+    }
+    else
+    {
+        printf("b = %d is bigger than a = %d\n",b,a);
+    }
+    
+    return 0;
+}
+
+
+5.
