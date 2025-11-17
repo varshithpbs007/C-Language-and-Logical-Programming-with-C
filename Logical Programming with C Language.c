@@ -49,4 +49,36 @@ int main() {
 }
 
 
-3.
+3. /*-------- swapping of two numbers with and without using a temporary variable ------ */
+#include <stdio.h>
+
+int main() {
+    
+    int a,b,temp;
+    printf("Enter two numbers to swap them:");
+    scanf("%d %d",&a,&b);
+    
+    printf("Before swapping: a = %d , b = %d\n",a,b);
+    
+    /* using a temp variable
+     temp = a;
+     a = b;
+     b = temp; */
+    
+    /* Method 1 of without using a temp variable
+     a = a + b;
+     b = a - b;
+     a = a -b; */ // But this method is dangerous coz numbers can overflow
+     
+     // Method 2 of without using a temp variable
+     a = a ^ b;
+     b = a ^ b;
+     a = a ^ b;
+    
+    printf("After Swapping: a = %d ,  b = %d",a,b);
+    
+    return 0;
+}
+
+
+4.
