@@ -156,4 +156,24 @@ int main(){
 }
 
 
-7. 
+7. /*-------- Display even numbers from 1 -10 using while loop ------ */
+#include <stdio.h>
+
+int main() {
+    int n = 1;
+    
+    while (n <= 10)
+    {
+        if(n % 2 == 0)
+        {
+            printf("%d\n",n);
+        }
+        
+        n++;
+    }
+
+    return 0;
+}
+
+
+8. 
