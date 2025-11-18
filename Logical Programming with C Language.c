@@ -176,4 +176,29 @@ int main() {
 }
 
 
-8. 
+8. /*-------- Biggest of three integers ------ */
+#include <stdio.h>
+
+int main() {
+    int a,b,c;
+    printf("Enter 3 integers:\n");
+    scanf("%d %d %d",&a,&b,&c);
+    
+    if(a > b && b > c)
+    {
+        printf("a = %d is the biggest",a);
+    }
+    else if (b > a && b > c)
+    {
+        printf("b = %d is the biggest",b);
+    }
+    else
+    {
+        printf("c = %d is the biggest",c);
+    }
+    
+    return 0;
+}
+
+
+9. 
