@@ -263,4 +263,32 @@ int main() {
 }
 
 
-11. 
+11. /* ----- To check if the entered year is a "Leap year or NOT"
+         ** Concept :
+            1. A leap year is divisible by 400
+            2. OR divisible by 4 but NOT divisible by 100
+   ----- */
+#include <stdio.h>
+
+int main() {
+    
+    int year;
+    printf("Enter a year:\n");
+    scanf("%d",&year);
+    
+    if ((year % 400 == 0) || (year % 4 == 0 && year % 100 != 0))
+    {
+        printf("Year:%d is a LEAP year",year);
+    }
+    else
+    {
+        printf("Year:%d is NOT a LEAP year",year);
+    }
+    
+    
+    return 0;
+    
+}
+
+
+12. 
