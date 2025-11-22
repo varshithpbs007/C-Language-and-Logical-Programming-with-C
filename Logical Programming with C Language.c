@@ -311,4 +311,21 @@ int main() {
 }
 
 
-13. 
+13. /* ----- To display the complete ASCII charecter set using C ----- */
+#include <stdio.h>
+
+int main() {
+    
+    int i;
+    
+    for(i=0 ; i<256 ; i++)
+    {
+        printf("%d = %c\n",i,i); // also understand what prints when we do this -->  printf("%d = %c\n",i,'i'); //here 'i' is a charecter literal
+    }
+    
+    return 0;
+    
+}
+
+
+14. 
