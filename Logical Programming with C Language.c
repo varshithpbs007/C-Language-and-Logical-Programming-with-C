@@ -237,4 +237,30 @@ int main() {
 }
 
 
-10. 
+10. /* ----- Find the largest positive number without Array ----- */
+#include <stdio.h>
+
+int main() {
+    
+    int n,i,large = 0,ele;
+    printf("Enter number of elements:\n");
+    scanf("%d",&n);
+    
+    printf("Enter %d elements:\n",n);
+    for(i = 1 ; i <= n ; i++)
+    {
+       scanf("%d",&ele);
+       if(ele > large)
+       {
+           large = ele;
+       }
+    }
+    printf("Latgest is %d",large);
+    
+    
+    return 0;
+    
+}
+
+
+11. 
