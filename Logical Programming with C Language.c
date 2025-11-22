@@ -201,4 +201,40 @@ int main() {
 }
 
 
-9. 
+9. /* ----- Nested if --- Ex: WAP to print the biggest of three numbers using "Nested if" ----- */
+#include <stdio.h>
+
+int main() {
+    
+    int a,b,c;
+    printf("Enter 3 numbers :\n");
+    scanf("%d %d %d",&a,&b,&c);
+    
+    if(a>b)
+    {
+        if(a>c)
+        {
+            printf("a = %d is biggest",a);
+        }
+        else
+        {
+           printf("c = %d is biggest",c); 
+        }
+    }
+    else
+    {
+        if(b>c)
+        {
+            printf("b = %d is biggest",b);
+        }
+        else
+        {
+             printf("c = %d is biggest",c);
+        }
+    }
+
+    return 0;
+}
+
+
+10. 
