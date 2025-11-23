@@ -438,4 +438,42 @@ int main() {
 }
 
 
-18. 
+18. /* ----- Armstrong number program.
+Concept: A number is said to be an Armstrong number if the sum of individual digits raised to the power of number of digits in the number is equal to the number itself.
+i.e., Sum[digits ^ n] = number, where the number has n digits.
+Ex: for a 3 digit number , say 153 is an Armstrong number because 1^3 + 5^3 + 3^3 = 153.
+
+Below is the code for checking a 3 digit Armstrong number----- */
+
+#include <stdio.h>
+
+int main() {
+    
+    int number,rem,sum=0,temp;
+    printf("Enter a 3-digit number:");
+    scanf("%d",&number);
+    temp = number;
+    while(number != 0)
+    {
+       rem = number % 10; //get last digit in number into rem
+       sum = sum + rem*rem*rem; //cube rem and add to sum
+       number = number / 10; //updating number with remaining digits (quotient)
+      
+       
+    }
+    number = temp;
+    if(sum == number)
+    {
+        printf("Entered number %d is an ARMSTRONG number",number);
+    }
+    else
+    {
+        printf("Entered number %d is NOT an ARMSTRONG number",number);
+    }
+    
+    
+    return 0;
+}
+
+
+19. 
