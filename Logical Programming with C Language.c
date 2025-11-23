@@ -422,4 +422,20 @@ int main() {
 }
 
 
-17.
+17. /* ----- To display ASCII value of a entered specific charecter----- */
+#include <stdio.h>
+
+int main() {
+    
+    char ch;
+    printf("Enter a charecter to get its ASCII value:");
+    scanf("%c",&ch);
+    
+    printf("%c = %d",ch,ch);
+    
+    return 0;
+    
+}
+
+
+18. 
