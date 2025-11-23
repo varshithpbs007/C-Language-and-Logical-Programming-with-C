@@ -387,4 +387,39 @@ int main() {
 }
 
 
-16. 
+16. /* ----- Prime  number program.
+def: A number is said to be a prime number, if it has exactly two factors (1 and the number n  itself).
+NOTE: 1. '1' is  NOT a prime number as it has only one factor '1'.
+      2. '2' is the ONLY EVEN PRIME NUMBER----- */
+#include <stdio.h>
+
+int main() {
+    
+    int n,i,FactCount=0;
+    
+    printf("Enter a number to check prime number:\n");
+    scanf("%d",&n);
+    
+    for(i=1 ; i<=n ; i++)
+    {
+        if(n%i == 0)
+        {
+            FactCount++;
+        }
+    }
+    
+    if(FactCount == 2)
+    {
+        printf("Entered number '%d' is PRIME NUMBER",n);
+    }
+    else
+    {
+        printf("Entered number '%d' is NOT PRIME NUMBER",n); 
+    }
+    
+    return 0;
+    
+}
+
+
+17.
