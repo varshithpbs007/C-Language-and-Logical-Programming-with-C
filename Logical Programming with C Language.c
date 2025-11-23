@@ -477,4 +477,31 @@ int main() {
     
 
 
-19. 
+19. /* Count digits in the user inputted number----- */
+
+#include <stdio.h>
+
+int main() {
+    
+    int n,count=0,temp;
+    printf("Enter a number to count no of digits:");
+    scanf("%d",&n);
+    temp = n;
+    
+    if(n == 0)
+    {
+        printf("No of digits in %d is 1",n);
+        return 0;
+    }
+    while(n>0)
+    {
+        n = n / 10;
+        count++;
+    }
+    n = temp;
+    printf("No of digits in %d is %d",n,count);
+    return 0;
+}
+
+
+20. 
