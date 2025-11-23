@@ -352,4 +352,39 @@ int main() {
 }
 
 
-15. 
+15. /* ----- Perfect  number program.
+def: A number is said to be a perfect number, if the sum of all proper divisors of the number is equal to the number itself.
+NOTE: 1. proper divisors => all divisors excluding the number itself.
+      2. Divisors <=> Factors----- */
+#include <stdio.h>
+
+int main() {
+    
+    int n,i,sum=0;
+    
+    printf("Enter a number to Check perfect number:\n");
+    scanf("%d",&n);
+    
+    for(i=1 ; i<n ; i++)
+    {
+        if(n%i == 0)
+        {
+            sum = sum + i;
+        }
+    }
+    
+    if(sum == n)
+    {
+        printf("Entered number '%d' is PERFECT NUMBER",n);
+    }
+    else
+    {
+        printf("Entered number is NOT PERFECT NUMBER"); 
+    }
+    
+    return 0;
+    
+}
+
+
+16. 
