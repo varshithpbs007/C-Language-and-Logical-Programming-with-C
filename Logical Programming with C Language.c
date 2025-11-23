@@ -328,4 +328,28 @@ int main() {
 }
 
 
-14. 
+14. /* ----- To display the factors of the inputted number ----- */
+#include <stdio.h>
+
+int main() {
+    
+    int n,i,factCount=1; // f is initialized with the count of the number itself as its self factor
+    
+    printf("Enter anumber to find number of factors:\n");
+    scanf("%d",&n);
+    
+    for(i=1 ; i<=n/2 ; i++)
+    {
+        if(n%i == 0)
+        {
+            ++factCount;
+        }
+    }
+    printf("No of factors for %d are %d",n,factCount);
+    
+    return 0;
+    
+}
+
+
+15. 
