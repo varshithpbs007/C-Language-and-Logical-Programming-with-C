@@ -531,4 +531,38 @@ int main() {
 }
 
 
-21. 
+21. /* ----Print perfect numbers in the given range
+Concept: If the sum of proper divisors/factors of a number is equal to the number itself then the number is said to be a perfect number.
+Ex: Proper Factors/divisors for 6 are 1,2,3 and also 1+2+3 = 6 , therefore 6 is a perfect number
+
+Below is the code to print perfect numbers in the given range----- */
+
+#include <stdio.h>
+
+int main() {
+    int min,max,n,i,sum=0;
+    printf("Enter range min:");
+    scanf("%d",&min);
+    printf("Enter range max:");
+    scanf("%d",&max);
+    
+    for(n=min ; n<max+1 ; n++)
+    {
+        sum = 0;
+        for(i=1 ; i<n ; i++)
+        {
+            if(n%i == 0)
+            {
+                sum = sum + i;
+            }
+        }
+        if(sum == n)
+        {
+           printf("%d is a PERFECT number\n",n); 
+        }
+    }
+    return 0;
+}
+
+
+22. 
