@@ -565,4 +565,59 @@ int main() {
 }
 
 
-22. 
+22. /* ----Program to display multiplicationn tables in the given range----- */
+
+#include <stdio.h>
+
+int main() {
+    int n,min,max,i;
+    printf("Enter range min:");
+    scanf("%d",&min);
+    printf("Enter range max:");
+    scanf("%d",&max);
+    
+    for(n=min ; n<max+1 ; n++)
+    {
+        printf("%d table:\n",n);
+        for(i=1 ; i<11 ; i++)
+        {
+            printf("%d * %d = %d\n",n,i,n*i);
+        }
+        
+    }
+    return 0;
+}
+
+
+23. /* ----Read and Display array elements----- */
+
+#include <stdio.h>
+
+int main() {
+    
+    int i,n;
+    
+    printf("Enter number of elements to read into array:");
+    scanf("%d",&n); // Array length as entered by user
+    
+    int arr[n]; // Variable Length Array
+    
+    for(i=0 ; i<n ; i++)
+    {
+        printf("Enter %dth array element:",i);
+        scanf("%d",&arr[i]);
+    }
+    
+    printf("Elements of the array are:\n");
+    
+    for(i = 0 ; i<n ; i++)
+    {
+        printf("arr[%d] = %d\n",i,arr[i]);
+    }
+    return 0;
+}
+
+
+24. 
+
+    
