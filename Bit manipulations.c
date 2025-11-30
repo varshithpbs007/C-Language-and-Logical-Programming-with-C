@@ -176,6 +176,33 @@ int main()
 }
 
 
-8. 
+8. /* Adding two numbers using bitwise operators */
+
+#include<stdio.h>
+
+int main()
+{
+    int a,b;
+    int carry;
+    
+    printf("Enter a = \n");
+    scanf("%d",&a);
+
+    printf("Enter b = \n");
+    scanf("%d",&b);
+    
+    while(b != 0)
+    {
+        carry = a & b; //finds carry whenever both bits are 1 and these postions generate carry
+        a = a ^ b; // performs addition without carry
+        b = carry << 1; //shift carry to correct position to add in next iteration. The carry must be added in the next most significant bit position
+    }
+    
+    printf("Sum = %d",a);
+    return 0;
+}
+
+
+9. 
     
 
