@@ -760,5 +760,36 @@ int main()
 }
 
 
-27. 
+27. /* Linear search for an element in the array */
+
+#include<stdio.h>
+
+int main()
+{
+    int arr[6] = {10,20,30,40,50,40};
+    int ele;
+    int found = 0;
+    
+    printf("Enter an element to search:\n");
+    scanf("%d",&ele);
+    
+    for(int i = 0 ; i < 6 ; i++)
+    {
+        if(arr[i] == ele)
+        {
+            printf("ele %d found at location %d",ele,i);
+            found = 1;
+            break; //this breaks stops the linear search to find any duplicate elements
+        }
+    }
+    
+    if(!found)
+    {
+        printf("ele %d NOT FOUND",ele);
+    }
+    return 0;
+}
+
+
+28. 
     
