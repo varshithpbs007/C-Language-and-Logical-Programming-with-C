@@ -588,6 +588,9 @@ int main() {
     return 0;
 }
 
+/*--------------------------------------------------------------------------------------------------------------------*/
+/*----------------------------------------------------ARRAYS and SORTING----------------------------------------------*/
+/*--------------------------------------------------------------------------------------------------------------------*/
 
 23. /* ----Read and Display array elements----- */
 
@@ -618,6 +621,100 @@ int main() {
 }
 
 
-24. 
+24. /* Inserting an element into the array at a given location
+i.e., Inserting element 'ele' at location 'loc'  */
 
+#include <stdio.h>
+
+int main() {
+    
+    int ele,loc;
+    int array[7];
+    printf("Enter 6 array elements:\n");
+    for(int i=0 ; i<6 ; i++)
+    {
+        scanf("%d",&array[i]);
+    }
+    int n = 6;//current number of elements
+    
+    printf("Enter element to insert:\n");
+    scanf("%d",&ele);
+    
+    printf("Enter location to insert element:\n");
+    scanf("%d",&loc);
+    
+    //shifting elements
+    for(int i = n-1 ; i >= loc ; i--)
+    {
+        array[i+1] = array[i];
+    }
+    
+    array[loc] = ele;
+    n++;
+    
+    printf("Elements after insertion of %d at %d location:\n",ele,loc);
+    for(int i=0 ; i<n ; i++)
+    {
+        printf("%d\t",array[i]);
+    }
+  
+
+    return 0;
+}
+
+
+25. /* Inserting one array into another array from the specified location */
+
+#include<stdio.h>
+
+int main()
+{
+    int m,n,loc;
+    
+    printf("Enter the size of array a:");
+    scanf("%d",&m);
+    
+    printf("Enter the size of array b:");
+    scanf("%d",&n);
+    
+    int a[100];
+    int b[100];
+    
+    printf("Enter elements of array a:\n");
+    for(int i = 0 ; i < m ; i++)
+    {
+        scanf("%d",&a[i]);
+    }
+    
+    printf("Enter elements of array b:\n");
+    for(int i = 0 ; i < n ; i++)
+    {
+        scanf("%d",&b[i]);
+    }
+    
+    printf("Enter location to insert array 'b' : ");
+    scanf("%d",&loc);
+    
+    //shifting array 'a' by length of 'b'
+    for(int i = m-1 ; i >= loc ; i--)
+    {
+        a[i+n] = a[i];
+    }
+    
+    //inserting array 'b' into 'a'
+    for(int i = 0 ; i < n ; i++ )
+    {
+        a[loc+i] = b[i];
+    }
+    
+    //printing array 'a' after inserting array 'b'
+    for(int i = 0 ; i < m+n ; i++)
+    {
+        printf("%d\t",a[i]);
+    }
+    return 0;
+}
+
+
+26. 
     
