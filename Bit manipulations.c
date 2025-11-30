@@ -1,4 +1,6 @@
-// 1. /* Program to checkif the entered number is a power of 2 */
+/* -----------------------------------IMPORTANT PROGRAMS ON BIT MANIPULATIONS------------------------------------- */
+
+1. /* Program to checkif the entered number is a power of 2 */
 
 #include<stdio.h>
 
@@ -27,7 +29,7 @@ void main()
 
 
 
-// 2. /* Program to check number of set bits (1's) in binary representation of the inputted number by the user.
+2. /* Program to check number of set bits (1's) in binary representation of the inputted number by the user.
 ---> Logic used used is we " to clear the right most set bit in n using n & (n-1) " and count how many times we had to clear right most bit until n becomes 0. */
 /* Brian Kernighan's algorthm */
 
@@ -50,7 +52,7 @@ int main()
 
 
 
-// 3. /* Program to isolate the right most set bit and make remaining 0's in binary representation of the inputted number by the user.
+3. /* Program to isolate the right most set bit and make remaining 0's in binary representation of the inputted number by the user.
 ---> Trick used is n = n & -n where (-n = ~n +1)*/
 
 #include<stdio.h>
@@ -71,8 +73,8 @@ int main()
 
 
 
-// 4. /* Program to swap two numbers without using a temporary variable.
-Concept : Use XOR properties like 1. a ^ b ^ a = 0 ( because a^ a = 0)
+4. /* Program to swap two numbers without using a temporary variable.
+Concept : Use XOR properties like 1. a ^ b ^ a = b ( because a^ a = 0)
                                   2. a ^ a = b ^ b = 0
                                   3. a ^ 0 = a , b ^ 0 = b */
 
@@ -104,7 +106,7 @@ int main()
 
 
 
-// 5. /* Program to check if two entered numbers have opposite signs */
+5. /* Program to check if two entered numbers have opposite signs */
 
 #include<stdio.h>
 int main()
@@ -128,5 +130,52 @@ int main()
 
 
 
-// 6.
+6. /* Program to reset a bit at a given position */
+
+#include<stdio.h>
+
+int main()
+{
+    unsigned int num,result;
+    int pos;
+    
+    printf("Enter a number:\n");
+    scanf("%d",&num);
+    
+    printf("Which position to reset in the number:\n");
+    scanf("%d",&pos);
+    
+    result =  num & ~(1<<pos);
+    
+    printf("After resetting result = %d",result);
+    return 0;
+}
+
+
+7. /* To replace the nth positioned bit in a given number with digit '1' */
+
+#include<stdio.h>
+
+int main()
+{
+    unsigned int num;
+    int pos;
+    
+    printf("Enter a number:\n");
+    scanf("%u",&num);
+    
+    printf("Number before replacement = %u\n",num);
+    
+    printf("Which position to replace in the number with '1' :\n");
+    scanf("%d",&pos);
+    
+    num =  num | (1<<pos);
+    
+    printf("After replacement number = %u\n",num);
+    return 0;
+}
+
+
+8. 
+    
 
