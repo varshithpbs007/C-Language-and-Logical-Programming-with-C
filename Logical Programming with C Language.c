@@ -716,5 +716,49 @@ int main()
 }
 
 
-26. 
+26. /* merging two arrays */
+
+#include<stdio.h>
+
+int main()
+{
+    int m,n;
+    
+    printf("Enter the size of array a:");
+    scanf("%d",&m);
+    
+    printf("Enter the size of array b:");
+    scanf("%d",&n);
+    
+    int a[100];
+    int b[100];
+    
+    printf("Enter elements of array a:\n");
+    for(int i = 0 ; i < m ; i++)
+    {
+        scanf("%d",&a[i]);
+    }
+    
+    printf("Enter elements of array b:\n");
+    for(int i = 0 ; i < n ; i++)
+    {
+        scanf("%d",&b[i]);
+    }
+    
+    //concatenating elements of array 'b' at the end of array 'a'
+    for(int i = 0 ; i < n ; i++)
+    {
+        a[m+i] = b[i];
+    }
+    
+    //printing array 'a' after merge
+    for(int i = 0 ; i < m+n ; i++)
+    {
+        printf("%d\t",a[i]);
+    }
+    return 0;
+}
+
+
+27. 
     
