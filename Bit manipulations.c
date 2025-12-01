@@ -203,6 +203,9 @@ int main()
 }
 
 
-9. 
+9. /* To set every alternate bit in a 8-bit number */
+
+
+10. /* To reset any bit --> CONCEPT: 
     
 
