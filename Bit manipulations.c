@@ -1,18 +1,18 @@
 /* -----------------------------------IMPORTANT PROGRAMS ON BIT MANIPULATIONS------------------------------------- */
 
-1. /* Program to checkif the entered number is a power of 2 */
+1. /* Program to check if the entered number is a power of 2 */
 
 #include<stdio.h>
 
-int ispoweroftwo(int n)
+void check_if_poweroftwo(int num)
 {
-    if((n & (n-1)) == 0)
+    if((num>2) && (num &(num-1)) == 0)
     {
-        return 1;
+        printf("number %d is a power of 2\n");
     }
     else
     {
-        return 0;
+        printf("number %d is NOT a power of 2\n");
     }
 }
 
@@ -22,10 +22,10 @@ void main()
     
     printf("Enter a number = ");
     scanf("%d",&n);
-    
-    printf("NOTE: 1 is printed below if entered number is power of 2 and 0 is printed if not.\n");
-    printf("%d ",ispoweroftwo(n));
+    check_if_poweroftwo(n);
 }
+
+
 
 
 
