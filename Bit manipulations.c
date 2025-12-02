@@ -203,9 +203,45 @@ int main()
 }
 
 
-9. /* To set every alternate bit in a 8-bit number */
+9. /* To print a number in binary on to the screen */
+
+/* Summary of the logic:
+
+1. Loop over each bit from MSB to LSB
+
+2. Right-shift the number so the target bit comes to position 0
+
+3. Mask with & 1 to isolate the bit
+
+4. Print it
+*/
+
+#include <stdio.h>
+void printbinary(int num)
+{
+   printf("Number %d in binary is:\t",num);
+   for(int i = 7 ; i >= 0 ; i-- )
+   {
+       printf("%d",(num>>i) & 1); //right shifting moves the ith bit to lsb and exposes it, and then bitwise and(&) with 1 extracts the lowest bit
+   }
+}
+
+int main()
+{
+    int number;
+    printf("Enter a number to print in binary:\t");
+    scanf("%d",&number);
+ 
+    printbinary(number);
+    return 0;
+}
 
 
-10. /* To reset any bit --> CONCEPT: 
+
+
+10. /* To set every alternate bit in a 8-bit number */
+
+
+11. /* To reset any bit --> CONCEPT: 
     
 
