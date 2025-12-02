@@ -59,7 +59,7 @@ int main()
 
 int rightmostsetbit(int n)
 {
-    return (n & -n);
+    return (n & -n); // n & (~n + 1)
 }
 int main()
 {
