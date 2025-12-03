@@ -607,7 +607,30 @@ int main(void)
 
 
 
-21. 
+21. /* C program to reverse an user inputted number  */
+
+#include<stdio.h>
+
+int main()
+{   
+   int num;
+   int rem=0,reverse_num=0;
+   
+   printf("Enter a number:\t");
+   scanf("%d",&num);
+   
+    while(num != 0)
+   {
+       rem = num % 10;
+       reverse_num = reverse_num*10 + rem;
+       num = num / 10;
+   }
+   printf("Reveresed number:\t%d",reverse_num);
+   return 0;
+}
+
+
+22. 
 
 
 
