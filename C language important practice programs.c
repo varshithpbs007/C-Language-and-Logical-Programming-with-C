@@ -630,7 +630,38 @@ int main()
 }
 
 
-22. 
+22. // malloc() and free() for dynamic memory allocation
+#include <stdio.h>
+#include <stdlib.h>
+
+int main() {
+    int* ptr;
+    ptr = (int*)malloc(10*sizeof(int));
+    
+    if(ptr == NULL)
+    {
+        printf("Memory allocation failed");
+        return 1;
+    }
+    
+    ptr[0] = 50;
+    ptr[1] = 12;
+    
+    printf("Base address of dynamically allocated memory is: %p\n",(void*)ptr);
+    
+    printf("%d\n",ptr[0]);
+    printf("%d\n",*(ptr+1));
+    printf("%d\n",ptr[1]);
+    
+    
+    free(ptr);
+    
+
+    return 0;
+}
+
+
+23. 
 
 
 
