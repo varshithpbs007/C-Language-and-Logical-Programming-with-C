@@ -619,7 +619,7 @@ int main()
    printf("Enter a number:\t");
    scanf("%d",&num);
    
-    while(num != 0)
+    while(num > 0)
    {
        rem = num % 10;
        reverse_num = reverse_num*10 + rem;
