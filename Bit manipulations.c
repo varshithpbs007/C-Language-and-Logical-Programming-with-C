@@ -239,9 +239,65 @@ int main()
 
 
 
-10. /* To set every alternate bit in a 8-bit number */
+10. /* Program to set every alternate bit in a 8-bit number  */
+
+#include<stdio.h>
+void printbinary(int);
 
 
-11. /* To reset any bit --> CONCEPT: 
+void printbinary(int n)
+{
+    for(int i  = 7 ; i >= 0 ; i--)
+    {
+        printf("%d",(n>>i) & 1);
+    }
+    printf("\n");
+    
+}
+int main()
+{
+    int num=8;
+    printbinary(num);
+    num = num | 0x55; //0x55 is used as mask to set alternate bits from LSB. If we want to use set alternate bits from MSB we should use 0xAA as the mask
+    printbinary(num);
+    
+    return 0;
+}
+
+
+11. /* Program to reset any bit whose position is entered by the user  */
+
+#include<stdio.h>
+void printbinary(int);
+
+
+void printbinary(int n)
+{
+    for(int i  = 7 ; i >= 0 ; i--)
+    {
+        printf("%d",(n>>i) & 1);
+    }
+    printf("\n");
+    
+}
+int main()
+{   
+    int num;
+    printf("Enter a number:\t ");
+    scanf("%d",&num);
+    printbinary(num);
+    
+    int pos;
+    printf("Enter bit position to reset: ");
+    scanf("%d",&pos);
+    
+    num = num & ~(1<<pos);
+    printbinary(num);
+    
+    return 0;
+}
+
+
+12. 
     
 
