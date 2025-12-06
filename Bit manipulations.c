@@ -219,10 +219,15 @@ int main()
 #include <stdio.h>
 void printbinary(int num)
 {
+   int BITS = sizeof(int)*8 - 1;
    printf("Number %d in binary is:\t",num);
-   for(int i = 7 ; i >= 0 ; i-- )
+   for(int i = BITS ; i >= 0 ; i-- )
    {
        printf("%d",(num>>i) & 1); //right shifting moves the ith bit to lsb and exposes it, and then bitwise and(&) with 1 extracts the lowest bit
+       if(i % 8 == 0 && i != 0)//just to give spaces between bytes
+       {
+           printf(" ");
+       }
    }
 }
 
@@ -235,7 +240,6 @@ int main()
     printbinary(number);
     return 0;
 }
-
 
 
 
