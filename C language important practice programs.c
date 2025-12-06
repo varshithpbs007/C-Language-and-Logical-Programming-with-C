@@ -661,7 +661,38 @@ int main() {
 }
 
 
-23. 
+23. // to insert element 30 at location 2 of arr
+#include<stdio.h>
+int main()
+{
+    int arr[5] = {2,4,6,8};
+    int current_size = 4;
+    
+    int loc = 2;
+    int ele = 30;
+    
+    if(current_size >=5)
+    {
+        printf("Array is Full");
+        return 1;
+    }
+    
+    
+    for ( int i = current_size ; i >= loc ; i--)
+    {
+        arr[i+1] = arr[i];
+    }
+    
+    arr[loc] = ele;
+    
+    current_size++;
+    
+    for(int i = 0 ; i < current_size ; i++)
+    {
+        printf("%d\t",arr[i]);
+    }
+    return 0;
+}
 
 
 
