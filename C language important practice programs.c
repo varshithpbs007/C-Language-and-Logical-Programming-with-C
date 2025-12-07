@@ -728,8 +728,8 @@ int main()
 }
 
 
-25. // Single linked list
-    #include<stdio.h>
+25. /*------------SINGLE LINKED LIST--------------*/
+#include<stdio.h>
 #include<stdlib.h>
 struct node{
     int data;
@@ -775,6 +775,25 @@ int length()
     return count;
 }
 
+void addatbegin()
+{
+    struct node *temp;
+    temp = (struct node*)malloc(sizeof(struct node));
+    temp->link = NULL;
+    printf("Enter a value to add at begin:\n");
+    scanf("%d",&temp->data);
+    
+    if(root == NULL)
+    {
+        root = temp;
+    }
+    else
+    {
+        temp->link = root;
+        root = temp;
+    }
+}
+
 int main()
 {
     append();
@@ -782,9 +801,9 @@ int main()
     append();
     append();
     append();
+    addatbegin();
     int len = length();
     printf("Length of linked list is : %d",len);
-    addatbegin();
     
     return 0;
 }
