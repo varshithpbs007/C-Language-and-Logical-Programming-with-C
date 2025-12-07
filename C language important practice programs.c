@@ -794,6 +794,56 @@ void addatbegin()
     }
 }
 
+void addafter()
+{
+    int loc,i=1;
+    printf("Enter Location to insert node:\n");
+    scanf("%d",&loc);
+    
+    int len = length();
+    if(loc > len)
+    {
+        printf("Invalid Location.\n");
+    }
+    else
+    {
+        struct node *p;
+        p = root;
+        while(i < loc)
+        {
+            p = p->link;
+            i++;
+        }
+        struct node *temp = (struct node*)malloc(sizeof(struct node));
+        printf("Enter data :\n");
+        scanf("%d",&temp->data);
+        temp->link = NULL;
+        
+        temp->link = p->link;
+        p->link = temp;
+    }
+}
+
+void display()
+{
+    struct node *temp;
+    temp = root;
+    if(temp->link == NULL)
+    {
+        printf("No nodes to display in the list.\n");
+    }
+    else
+    {
+        while(temp != NULL)
+        {
+            printf("%d->",temp->data);
+            temp = temp->link;
+        }
+    }
+}
+
+
+
 int main()
 {
     append();
@@ -802,8 +852,10 @@ int main()
     append();
     append();
     addatbegin();
+    addafter();
     int len = length();
-    printf("Length of linked list is : %d",len);
+    printf("Length of linked list is : %d.\n",len);
+    display();
     
     return 0;
 }
