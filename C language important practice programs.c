@@ -728,7 +728,66 @@ int main()
 }
 
 
+25. // Single linked list
+    #include<stdio.h>
+#include<stdlib.h>
+struct node{
+    int data;
+    struct node *link;
+};
+struct node *root = NULL;
 
+void append()
+{
+    struct node *temp;
+    temp = (struct node*)malloc(sizeof(struct node));
+    
+    printf("Enter data:\n");
+    scanf("%d",&temp->data);
+    temp->link = NULL;
+    
+    if(root == NULL)
+    {
+        root = temp;
+    }
+    else
+    {
+        struct node *p;
+        p = root;
+        while(p->link != NULL)
+        {
+            p = p->link;
+        }
+        p->link = temp;
+    }
+    
+}
+
+int length()
+{
+    int count = 0;
+    struct node *temp = root;
+    while(temp != NULL)
+    {
+        count++;
+        temp = temp->link;
+    }
+    return count;
+}
+
+int main()
+{
+    append();
+    append();
+    append();
+    append();
+    append();
+    int len = length();
+    printf("Length of linked list is : %d",len);
+    addatbegin();
+    
+    return 0;
+}
 
 
 
