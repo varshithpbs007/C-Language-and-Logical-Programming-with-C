@@ -694,6 +694,39 @@ int main()
     return 0;
 }
 
+24. //to check if a string is a palindrome
+#include<stdio.h>
+#include<string.h>
+int main()
+{
+   char str1 [6] = "ollo";
+   char str2 [6];
+   strcpy(str2,str1);
+   int i,j,temp;
+   i = 0;
+   j = strlen(str1) - 1;
+   
+   while(i < j)
+   {
+       temp = str1[i];
+       str1[i] = str1[j];
+       str1[j] = temp;
+       i++;
+       j--;
+   }
+   
+   if(strcmp(str2,str1) == 0)
+   {
+       printf("str1 is a palindrome");
+   }
+   else
+   {
+       printf("Its not a palindrome");
+   }
+   
+   return 0;
+}
+
 
 
 
