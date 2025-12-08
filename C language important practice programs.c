@@ -889,13 +889,48 @@ void delete_node()
     }
 }
 
-/*
+
 void swap_node()
 {
-    
+    struct node *p = root;
+    struct node *q,*r;
+    int loc;
+    printf("Enter location to swap with its consecutive location:\n");
+    scanf("%d",&loc);
+    if(loc <= 0 || loc > length())
+    {
+        printf("Invalid location.\n");
+        return ;
+    }
+    if(loc == 1)
+    {
+        q = root;
+        r = q->link;
+        
+        q->link = r->link;
+        r->link = q;
+        root = r;
+    }
+    else
+    {
+        int i = 1;
+        while(i < loc-1)
+        {
+            p = p->link;
+            i++;
+        }
+        q = p->link;
+        r = q->link;
+        
+        q->link = r->link;
+        r->link = q;
+        p->link = r;
+        
+        
+    }
 }
 
-void reverse_list()
+/*void reverse_list()
 {
     
 }
@@ -909,19 +944,17 @@ int main()
     append();
     append();
     append();
-    add_at_begin();
-    add_after();
-    delete_node();
-    //swap_node();
+    //add_at_begin();
+    //add_after();
+    //delete_node();
+    swap_node();
     //reverse_list();
-    printf("Length of linked list is : %d.\n",length());
+    //printf("Length of linked list is : %d.\n",length());
     display();
     
     
     return 0;
 }
-
-
 
 
 
