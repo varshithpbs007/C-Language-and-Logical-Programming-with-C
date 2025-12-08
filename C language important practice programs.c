@@ -731,6 +731,15 @@ int main()
 25. /*------------SINGLE LINKED LIST--------------*/
 #include<stdio.h>
 #include<stdlib.h>
+void append();
+int length();
+void add_at_begin();
+void add_after();
+void display();
+void delete_node();
+void swap_node();
+void reverse_list();
+
 struct node{
     int data;
     struct node *link;
@@ -775,7 +784,7 @@ int length()
     return count;
 }
 
-void addatbegin()
+void add_at_begin()
 {
     struct node *temp;
     temp = (struct node*)malloc(sizeof(struct node));
@@ -794,7 +803,7 @@ void addatbegin()
     }
 }
 
-void addafter()
+void add_after()
 {
     int loc,i=1;
     printf("Enter Location to insert node:\n");
@@ -828,9 +837,10 @@ void display()
 {
     struct node *temp;
     temp = root;
-    if(temp->link == NULL)
+    if(temp == NULL)
     {
         printf("No nodes to display in the list.\n");
+        return;
     }
     else
     {
@@ -842,33 +852,74 @@ void display()
     }
 }
 
+void delete_node()
+{
+    struct node *p,*q;
+    struct node *temp = root;
+    int i = 1;
+    int loc;
+    printf("Enter any node number to delete(from 1st):\n");
+    scanf("%d",&loc);
+   
+    if(loc <= 0 || loc > length())
+    {
+        printf("Invalid location.\n");
+        return;
+    }
+    else if(loc == 1) 
+    {
+        temp = root;
+        root = temp->link;
+        temp->link = NULL;
+        free(temp);
+    }
+    else
+    {
+        p = root;
+        while(i < loc-1)
+        {
+          p = p->link;
+          i++;
+        }
+        q = p->link;
+        p->link = q->link;
+        q->link = NULL;
+        free(q);
+        
+    }
+}
 
+/*
+void swap_node()
+{
+    
+}
 
+void reverse_list()
+{
+    
+}
+
+*/
 int main()
 {
+    
     append();
     append();
     append();
     append();
     append();
-    addatbegin();
-    addafter();
-    int len = length();
-    printf("Length of linked list is : %d.\n",len);
+    add_at_begin();
+    add_after();
+    delete_node();
+    //swap_node();
+    //reverse_list();
+    printf("Length of linked list is : %d.\n",length());
     display();
+    
     
     return 0;
 }
-
-
-
-    
-
-
-
-
-
-
 
 
 
