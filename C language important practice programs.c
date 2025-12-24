@@ -14,6 +14,25 @@ void main(){
     }
 }
 
+/* Method-2: More efficient solution for 1. is to use bitwise operators and check LSB to find out number is even or odd */
+// To check if a number is even or odd
+#include <stdio.h>
+
+int main() {
+    int num;
+    printf("Enter a number:");
+    scanf("%d",&num);
+    if(num & 1)
+    {
+        printf("Number is ODD");
+    }
+    else
+    {
+       printf("Number is EVEN"); 
+    }
+    return 0;
+}
+
 
  //Loop control statements
 2./* Program to print even numbers between 1 - 10 */
