@@ -26,5 +26,23 @@ int main()
 }
 
 
-/* 2. Finding the length of a string */
+/* 2. Finding the length of a string with out the inbuilt library function */
+#include<stdio.h>
+int main()
+{
+    int len = 0;
+    int i=0;
+    char name[] = "Varshith";
+    while(name[i] != '\0')
+    {
+        i++;
+        len++;
+    }
+    printf("Length of the string is %d",len);
+    
+    return 0;
+}
+
+
+
 
