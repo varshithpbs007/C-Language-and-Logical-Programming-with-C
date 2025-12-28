@@ -44,5 +44,28 @@ int main()
 }
 
 
+/* 3. Swap variables without using any temp variable and by using XOR */
+#include<stdio.h>
+void swap(int*,int*);
+int main()
+{
+    int a = 10;
+    int b = 5;
+    printf("Before swap: a = %d, b = %d\n",a,b);
+    swap(&a,&b);
+    printf("After swap: a = %d, b = %d",a,b);
+    return 0;
+}
+
+void swap(int* a, int* b)
+{
+    if(a == b) return; /* 1st disadvantage of swap with out temp is data is lost if both variables point to the same address, and 2nd disadvantage is we can only swap integers and cannot swap char or float values without temp */
+    
+    *a = *a ^ *b;
+    *b = *a ^ *b;
+    *a = *a ^ *b;
+}
+
+
 
 
