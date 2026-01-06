@@ -67,5 +67,114 @@ void swap(int* a, int* b)
 }
 
 
+/* 4. Stack implementation and its operations using a static array*/
+
+#include <stdio.h>
+#define CAPACITY 5 //Preprocessor Macro
+int stack[CAPACITY]; //Passing macro as array size
+int top = -1;
+
+void push(int);
+void main() {
+    
+   int choice;
+   int element;
+   int item;
+   while(1)
+   {
+       printf("1.push\n");
+       printf("2.pop\n");
+       printf("3.peek\n");
+       printf("4.traverse\n");
+       printf("5.quit\n"); 
+       
+       printf("Enter your choice:");
+       scanf("%d",&choice);
+       
+       switch(choice)
+       {
+           case 1 : printf("Enter element to push:");
+                    scanf("%d",element);
+                    push(element);
+           case 2 : item = pop();
+                    if(item == 0)
+                    {
+                        printf("Stack is Empty");
+                    }
+                    else
+                    {
+                        printf("popped element is %d\n",item);
+                    }
+           case 3 : peek();
+           case 4 : traverse();
+           case 5 : exit(0);
+           default : printf("Invalid input \n\n");
+       }
+   }
+}
+
+void push(int ele)
+{
+    if(isFull)
+    {
+        printf("Stack is Full\n");
+    }
+    else
+    {
+      top++;
+      stack[top] = ele;
+      printf("Element %d pushed onto the stack\n",ele);
+    }
+  
+}
+
+int isFull()
+{
+    if(top == CAPACITY-1)
+    {
+        return 1;  
+    }
+    else
+    {
+        return 0;
+    }
+}
+
+int pop()
+{
+   if(isEmpty)
+   {
+       return 0;
+   }
+   else
+   {
+       return stack[top--];
+   }
+}
+
+int isEmpty()
+{
+    if(top == -1)
+    {
+        return 1;
+    }
+    else
+    {
+        return 0; 
+    }
+}
+
+void peek()
+{
+    if(isEmpty)
+    {
+        printf("Stack is Empty\n");
+    }
+    else
+    {
+      printf("Top element is %d,stack[top]");
+    }
+}
+
 
 
