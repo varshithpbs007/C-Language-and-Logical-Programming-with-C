@@ -59,7 +59,7 @@ int main()
 
 void swap(int* a, int* b)
 {
-    if(a == b) return; /* 1st disadvantage of swap with out temp is data is lost if both variables point to the same address, and 2nd disadvantage is we can only swap integers and cannot swap char or float values without temp */
+    if(a == b) return; /* 1st disadvantage of swap without temp is data is lost if both variables point to the same address, and 2nd disadvantage is we can only swap integers and cannot swap char or float values without temp */
     
     *a = *a ^ *b;
     *b = *a ^ *b;
@@ -70,12 +70,20 @@ void swap(int* a, int* b)
 /* 4. Stack implementation and its operations using a static array*/
 
 #include <stdio.h>
-#define CAPACITY 5 //Preprocessor Macro
+#include<stdlib.h>
+
+#define CAPACITY 3 //Preprocessor Macro
 int stack[CAPACITY]; //Passing macro as array size
 int top = -1;
 
 void push(int);
-void main() {
+int isFull();
+int pop();
+int isEmpty();
+void peek();
+void traverse();
+
+int main(void) {
     
    int choice;
    int element;
@@ -94,8 +102,9 @@ void main() {
        switch(choice)
        {
            case 1 : printf("Enter element to push:");
-                    scanf("%d",element);
+                    scanf("%d",&element);
                     push(element);
+                    break;
            case 2 : item = pop();
                     if(item == 0)
                     {
@@ -105,17 +114,23 @@ void main() {
                     {
                         printf("popped element is %d\n",item);
                     }
+                    break;
            case 3 : peek();
+                    break;
            case 4 : traverse();
+                    break;
            case 5 : exit(0);
+                    break;
            default : printf("Invalid input \n\n");
        }
    }
+   
+   return 0;
 }
 
 void push(int ele)
 {
-    if(isFull)
+    if(isFull())
     {
         printf("Stack is Full\n");
     }
@@ -142,7 +157,7 @@ int isFull()
 
 int pop()
 {
-   if(isEmpty)
+   if(isEmpty())
    {
        return 0;
    }
@@ -166,15 +181,33 @@ int isEmpty()
 
 void peek()
 {
-    if(isEmpty)
+    if(isEmpty())
     {
         printf("Stack is Empty\n");
     }
     else
     {
-      printf("Top element is %d,stack[top]");
+      printf("Top element is %d\n",stack[top]);
     }
 }
+
+void traverse()
+{
+    if(isEmpty())
+    {
+        printf("Stack is Empty\n");
+    }
+    else
+    {
+        printf("Stack elements are:\n");
+        for(int i = 0 ; i <= top ; i++)
+        {
+            printf("%d\n",stack[i]);
+        }
+    }
+}
+
+
 
 
 
