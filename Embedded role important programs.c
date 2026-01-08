@@ -77,11 +77,11 @@ int stack[CAPACITY]; //Passing macro as array size
 int top = -1;
 
 void push(int);
-int isFull();
-int pop();
-int isEmpty();
-void peek();
-void traverse();
+int isFull(void);
+int pop(void);
+int isEmpty(void);
+void peek(void);
+void traverse(void);
 
 int main(void) {
     
