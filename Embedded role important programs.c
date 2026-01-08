@@ -209,5 +209,54 @@ void traverse()
 
 
 
+/* 4. Removing duplicates from an array */
+#include<stdio.h>
+int main(void)
+{
+    int size;
+    int i,j,k,n;
+    
+    printf("Enter the size of the array:\n");
+    scanf("%d",&size);
+    int arr[size];
+    
+    printf("Enter elements(along with duplicates) to store in the array:\n");
+    
+    for(i = 0 ; i < size ; i++)
+    {
+        scanf("%d",&arr[i]);
+    }
+
+   
+    
+    // removing duplicate elements from the array
+    for(i = 0 ; i < size ; i++)
+    {
+        for(j = i+1 ; j < size ; j++)
+        {
+          if(arr[i] == arr[j])
+          {
+              for(k = j ; k < size-1; k++)
+              {
+                  arr[k] = arr[k+1];
+              }
+              size--; //size reduces after removing one duplicate
+              j--; //to make sure new shifted element is also compared (other wise j++ will go and the element came into index from where duplicate is removed will not be checked)
+          }
+        }
+    }
+    
+    printf("After removing the duplicates , the array elements are:\n");
+    for(n = 0; n < size ; n++)
+    {
+        printf("%d\t",arr[n]);
+    }
+    
+    return 0;
+}
+
+
+
+
 
 
