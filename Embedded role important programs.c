@@ -256,7 +256,24 @@ int main(void)
 }
 
 
-
+/* 5. Endianess check (method 1) */
+#include<stdio.h>
+#include<stdint.h>
+int main(void)
+{
+    uint32_t num = 0x12345678;
+    uint8_t *byte_addr = (uint8_t*)&num; //Typecasting the 32-bit variable’s address to a pointer that accesses memory as 8-bit chunks (bytes) and storing it in a uint8_t pointer.
+    if(*byte_addr == 0x78)
+    {
+        printf("System is Little Endian.\n");
+    }
+    else
+    {
+        printf("System is Big Endian.\n");
+    }
+    
+    return 0;
+}
 
 
 
