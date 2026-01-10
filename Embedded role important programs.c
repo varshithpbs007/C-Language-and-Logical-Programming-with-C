@@ -276,4 +276,30 @@ int main(void)
 }
 
 
+/* 6. Endianess check (method 2) */
+#include<stdio.h>
+#include<stdint.h>
+int main(void)
+{
+    union{
+        uint32_t a;
+        uint8_t b;
+    }u; // a and b start at the same address and they overlap completely and they point to the same address
+    
+    u.a = 0x1;
+    if(u.b == 0x1)
+    {
+        printf("System is Little Endian.\n");
+    }
+    else
+    {
+        printf("System is Big Endian.\n");
+    }
+    
+    return 0;
+}
+
+
+
+
 
