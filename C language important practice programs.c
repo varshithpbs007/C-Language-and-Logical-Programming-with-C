@@ -19,18 +19,23 @@ void main(){
 #include <stdio.h>
 
 int main() {
+    
     int num;
-    printf("Enter a number:");
+    printf("Enter the number:\n");
     scanf("%d",&num);
-    if(num & 1)
+    int mask = 1;
+    
+    if((num & mask) == 1)
     {
-        printf("Number is ODD");
+        printf("The number is odd.\n");
     }
     else
     {
-       printf("Number is EVEN"); 
+        printf("The number is even.\n");
     }
+
     return 0;
+    
 }
 
 
