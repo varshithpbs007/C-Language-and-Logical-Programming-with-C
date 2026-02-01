@@ -94,7 +94,7 @@ void main()
     }
     printf("Sum of %d natural numbers is %d",n,sum);
 }
-
+------------------------------------------------------------------------------------------------------------------------------------------
 4./* Program to check if the entered number is a perfect number or not.
 /* Perfect number means --> sum of factors of the given number 'except itself' is equal to the same number. */
 /* Ex: if n =6,  1,2,3 are factors of 6 and 1+2+3 = 6 , So 6 is a perfect number. */
