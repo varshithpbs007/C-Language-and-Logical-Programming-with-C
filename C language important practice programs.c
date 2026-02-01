@@ -38,9 +38,11 @@ int main() {
     
 }
 
-
+-----------------------------------------------------------------------------------------------------------------------------
  //Loop control statements
 2./* Program to print even numbers between 1 - 10 */
+    
+//Method 1: Simpler to understand, but not efficient
 #include<stdio.h>
 void main()
 {
@@ -55,6 +57,28 @@ void main()
     }
 }
 
+//Method 2: Uses bit-wise and is more efficient than method 1
+#include <stdio.h>
+int main() {
+    
+   int min,max;
+   printf("Enter min range of numbers:\n");
+   scanf("%d",&min);
+   printf("Enter max range of numbers:\n");
+   scanf("%d",&max);
+    
+   for(int i = min ; i <= max ; i++)
+   {
+       if((i&1) == 0)
+       {
+           printf("%d\n",i);
+       }
+   }
+    return 0;
+    
+}
+
+-------------------------------------------------------------------------------------------------------------------------------------
 3./* Program to print sum of first 'n' natural numbers */
 #include<stdio.h>
 void main()
