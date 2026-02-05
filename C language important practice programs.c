@@ -549,25 +549,28 @@ void main()
 
 -----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
     
-18. // Program to swap two variables using pointers from taking input from the user
-#include <stdio.h>
-void swap(int*,int*); //Function prototype must have a semicolon at the end
-
-int main() {
+18.// To swap two variables using pointers, taking input from the user
+#include<stdio.h>
+void swap(long long*,long long*);
+int main()
+{
+    long long a, b;
+    printf("Enter two numbers two swap:\t \n");
+    scanf("%lld %lld",&a,&b);
     
-    int a = 0 ,b = 0 ;
-    printf("Enter the values to be swapped :\n");
-    scanf("%d %d", &a, &b);
-    int *x, *y;
-    x = &a;
-    y = &b;
-    swap(x,y);
-    printf("Values after swapping are : %d %d",a,b);
+    printf("Before swap a = %lld, b = %lld\n",a,b);
+    swap(&a,&b);
     
-  return 0;  
-
+    printf("After swap a = %lld, b = %lld",a,b);
+    return 0;
 }
-void swap(int* x,int* y){
+
+void swap(long long* x, long long* y)
+{
+    if(x == y)
+    {
+        return;
+    }
     *x = *x ^ *y;
     *y = *x ^ *y;
     *x = *x ^ *y;
