@@ -393,24 +393,44 @@ void main()
     
 14./* To print the fibonacci series with n elements */
 
+// To print the fibonacci series with n elements
 #include<stdio.h>
-void main()
+int main()
 {
     int n;
-    int fibo_0 = 0, fibo_1 = 1;
-    int fibo_2;
-    int i = 0,sum = 0;
-    
-    printf("Enter how many elements of fibonacci series to print: ");
+    printf("Enter number of elements to print in fibonacci series: ");
     scanf("%d",&n);
     
-    for(i =1 ; i <= n ; i++)
+    int fibo_0 = 0;
+    int fibo_1 = 1;
+    int fibo_next;
+    
+    if(n <+ 0)
     {
-        printf("%d\n",fibo_0);
-        fibo_2 = fibo_0 + fibo_1;
-        fibo_0 = fibo_1;
-        fibo_1 = fibo_2;
+        printf("Please enter a positive number.\n");
+        return 1;
     }
+    
+    if(n >= 1)
+    {
+       printf("%d\n",fibo_0); 
+    }
+    
+    if(n >= 2)
+    {
+       printf("%d\n",fibo_1); 
+    }
+    
+    for(int i = 3 ; i <= n ; i++)
+    {
+        fibo_next = fibo_0 + fibo_1;
+        printf("%d\n",fibo_next);
+        
+        fibo_0 = fibo_1;
+        fibo_1 = fibo_next;
+        
+    }
+    return 0;
 }
 
 ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
@@ -447,6 +467,7 @@ void main()
    
 }
 
+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 
 16./* To check if the entered number is a STRONG number or not */
 /* STRONG number --> (the sum of factorials of the digits of number) = (The number itself) 
