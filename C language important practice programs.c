@@ -437,36 +437,38 @@ int main()
 
 15. /* To check if the entered number is a palindrome or not */
 
-#include<stdio.h>
-void main()
+// To check if the entered number is a palindrome or NOT
+#include <stdio.h>
+int main()
 {
-    int n, r, temp,  sum = 0;
-    
-    printf("Enter the number to check if its a palindrome : ");
+    int n;
+    printf("Enter a number:\n");
     scanf("%d",&n);
     
-    temp = n;
+    int original;
+    long long reverse = 0;
+    int digit;
+    
+    original = n;
     
     while(n > 0)
     {
-        r = n % 10;
-        sum = sum * 10 + r;
-        n = n /10;
+        digit = n % 10;
+        reverse = reverse * 10 + digit;
+        n = n / 10;
     }
     
-    n = temp;
-    
-    if(n == sum)
+    if(reverse == original)
     {
-        printf("The number entered is a palindrome");
+        printf("The number %d is a Palindrome.\n",original);
     }
     else
     {
-         printf("The number entered is NOT a palindrome");
+        printf("The number %d is NOT a Palindrome.\n",original);
     }
-   
+    return 0;
+    
 }
-
 ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 
 16./* To check if the entered number is a STRONG number or not */
