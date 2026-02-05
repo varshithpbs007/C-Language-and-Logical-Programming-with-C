@@ -94,6 +94,28 @@ void main()
     }
     printf("Sum of %d natural numbers is %d",n,sum);
 }
+
+// Method 2 : using the formula n*(n+1)/2 witout using any loop
+#include <stdio.h>
+
+int main()
+{
+    int n;
+    int sum = 0;
+    printf("Enter number of natural numbers to be summed:\n");
+    scanf("%d",&n);
+    
+    if(n<0)
+    {
+        printf("Please enter a non-negative number.\n");
+        return 1;
+    }
+    
+    sum = n * (n + 1) / 2;
+    printf("Sum of first %d natural numbers is = %d",n,sum);
+    return 0;
+}
+
 ------------------------------------------------------------------------------------------------------------------------------------------
 4./* Program to check if the entered number is a perfect number or not.
 /* Perfect number means --> sum of factors of the given number 'except itself' is equal to the same number. */
@@ -130,28 +152,8 @@ void main()
     }
 }
 
-// Method 2 : using the formula n*(n+1)/2 witout using any loop
-#include <stdio.h>
-
-int main()
-{
-    int n;
-    int sum = 0;
-    printf("Enter number of natural numbers to be summed:\n");
-    scanf("%d",&n);
-    
-    if(n<0)
-    {
-        printf("Please enter a non-negative number.\n");
-        return 1;
-    }
-    
-    sum = n * (n + 1) / 2;
-    printf("Sum of first %d natural numbers is = %d",n,sum);
-    return 0;
-}
-
 -------------------------------------------------------------------------------------------------------------------------------------------
+
 // Printing patterns 
 5. /* To print the pattern *****
                         *****
