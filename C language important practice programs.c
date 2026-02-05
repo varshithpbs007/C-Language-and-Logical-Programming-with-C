@@ -98,7 +98,8 @@ void main()
 4./* Program to check if the entered number is a perfect number or not.
 /* Perfect number means --> sum of factors of the given number 'except itself' is equal to the same number. */
 /* Ex: if n =6,  1,2,3 are factors of 6 and 1+2+3 = 6 , So 6 is a perfect number. */
-/* Logic: So to check that we check mod(remainder) of n with all the numbers and     add the numbers which give remainder 0 (because that means they are the     factors and we need to add them and check if their sum is equal to n or     not*/
+/* Logic: So to check that we check mod(remainder) of n with all the numbers and add the numbers which give remainder 0 (because that means they are the factors and we need to add them and check if their sum is equal to n or     not*/
+// Method 1:
 #include<stdio.h>
 void main()
 {
@@ -129,7 +130,28 @@ void main()
     }
 }
 
+// Method 2 : using the formula n*(n+1)/2 witout using any loop
+#include <stdio.h>
 
+int main()
+{
+    int n;
+    int sum = 0;
+    printf("Enter number of natural numbers to be summed:\n");
+    scanf("%d",&n);
+    
+    if(n<0)
+    {
+        printf("Please enter a non-negative number.\n");
+        return 1;
+    }
+    
+    sum = n * (n + 1) / 2;
+    printf("Sum of first %d natural numbers is = %d",n,sum);
+    return 0;
+}
+
+-------------------------------------------------------------------------------------------------------------------------------------------
 // Printing patterns 
 5. /* To print the pattern *****
                         *****
@@ -155,7 +177,8 @@ void main()
       
 }
 
-
+-----------------------------------------------------------------------------------------------------------------------------------------------------------------
+    
 6. /* To print a left right angled triangular patter */
 /* printing patterns using post decrement operator */
 #include<stdio.h>
@@ -175,7 +198,7 @@ void main()
       
 }
 
-
+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 
 7./* printing patterns using both  post increment and decrement operators */
 #include<stdio.h>
@@ -195,7 +218,7 @@ void main()
       
 }
 
-
+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 
 8./* printing patterns using both  post increment and decrement operators */
 #include<stdio.h>
@@ -215,7 +238,8 @@ void main()
       
 }
 
-
+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+    
 9. /* printing patterns using both  post increment and decrement operators */
 #include<stdio.h>
 void main()
@@ -234,7 +258,8 @@ void main()
       
 }
 
-
+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+    
 10. /* printing a pyramid using nested for loops and operators */
 /* Maximum horizontal charecters allowed onto a console in a single line is 80 */
 #include<stdio.h>
@@ -259,9 +284,8 @@ void main()
       
 }
 
-
-
-
+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+//
 11./* To find factorial of a given number */
 
 #include<stdio.h>
