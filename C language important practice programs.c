@@ -287,36 +287,51 @@ void main()
 }
 
 --------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
-//
-11./* To find factorial of a given number */
+11. // To find the factorial of the entered number
 
-#include<stdio.h>
-void main()
+#include <stdio.h>
+/* Method 1: Using for loop 
+int main()
 {
-    int n,i;
-    long long int fact=1;
-    printf("Enter the number to find its factorial: ");
+    int n;
+    long long fact = 1;
+    printf("Enter a number to find its factorial:\n");
     scanf("%d",&n);
     
-    if(n<0)
+    for(int i = n ; i > 0 ; i--)
     {
-        printf("Factorial is not defined for negative numbers\n");
+        fact = fact * i;
     }
-    else
-    {
-        for(i = 1; i <= n ; i++ )
-        {
-            fact *= i; 
-        }
-        printf("Factorial of %d is = %lld",n,fact);
-    }
+    printf("Factorial of %d is %lld\n",n,fact);
+    return 0;
+}
+*/
+
+// Method 2: Using recursion
     
-    
+long long factorial(int); // function prototype
+int main()
+{
+   int n;
+   //long long fact = 1;  // long long type is used to avoid overflow
+   printf("Enter a number to find its factorial:\n");
+   scanf("%d",&n);
    
+  
+   printf("Factorial of %d is %lld\n",n,factorial(n));
+   return 0;
 }
 
+long long factorial(int n)
+   {
+       if(n == 0)
+       {
+           return 1;
+       }
+       return n * factorial(n - 1);
+   }
 
-
+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 
 12. /* To find sum of digits of a given number using modulus %, and division /, operators */
 
