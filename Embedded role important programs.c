@@ -318,6 +318,19 @@ void main()
 }
 
 //2.
+#include <stdio.h>
+#include <string.h>
+int main()
+{
+    char arr[10];
+    char str[] = "Linux";
+    char* p = str; // p is the pointer to the first element in the character array 'L'. ~ char* p = &str[0]
+    // sizeof() and strlen() return size_t (not int), so the format specifier must be preferably %zu (not %d)
+    printf("Size of arr is %zu\n",sizeof(arr)); // 10
+    printf("Length of str is %zu\n",strlen(str)); // 5
+    printf("Size of str is %zu\n",sizeof(str)); // 6, beacause "\0" is also included in size
+    return 0;
+}
 
 
 
