@@ -317,7 +317,7 @@ void main()
     printf("%u\n",*(&i)); // 100
 }
 
-//2.
+//2. sizeof() vs strlen()
 #include <stdio.h>
 #include <string.h>
 int main()
@@ -331,6 +331,12 @@ int main()
     printf("Size of str is %zu\n",sizeof(str)); // 6, beacause "\0" is also included in size
     return 0;
 }
+
+//3. Pointer to an entire array demonstration
+
+
+//4. Call-by-value vs Call-by-reference
+
 
 
 
