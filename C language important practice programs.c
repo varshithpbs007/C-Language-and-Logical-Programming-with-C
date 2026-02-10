@@ -578,34 +578,23 @@ void swap(long long* x, long long* y)
 
 ---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 
-19. /* Demonstrate difference between:
-   1) Constant pointer
-   2) Pointer to a constant
-
-   GOLDEN RULE: Look where "const" is placed.
-   - If "const" is after '*'  => pointer is constant:  int *const p;
-   - If "const" is before '*' => value is constant:    const int *p;
-*/
-
+19.// Demonstration of 
+// 1. Constant Pointer
+// 2. Pointer to a constant
 #include <stdio.h>
-
-int main(void) {
-    int a = 5, b = 7;
-
-    /* 1) Constant pointer (pointer itself is constant, value can change) */
-    int *const q = &b;   // q always points to b; q cannot be reassigned
-    *q = 8;              // allowed: modifies the value at the pointed location (b)
-
-    // q = &a;           // error if uncommented: assignment of read-only variable 'q'
-
-    /* 2) Pointer to a constant (value is protected via this pointer; pointer can change) */
-    const int *p = &a;   // p points to a value that cannot be modified through p
-    a = 6;               // allowed: modifying 'a' directly is fine
-
-    // *p = 7;           // error if uncommented: assignment of read-only location '*p'
-    // p = &b;           // allowed: p can be repointed to another int
-
-    printf("a = %d, b = %d\n", a, b);
+int main()
+{
+    int x = 10;
+    const int* addr1 = &x; // 2. Pointer to a constant, meaning we can change the pointer, but not the value its pointing to
+    // i.e., addr1 = &y; is alowed, but *addr1 = 30; is NOT allowed
+    
+    
+    int y = 20;
+    int* const addr2 = &y; // 1. Constant Pointer, meaning we cannot change the pointer, we can modify the value its pointing to
+    // i.e., addr2 = &x; is NOT allowed, but *addr2 = 30; is allowed
+    printf("%p\n",(void*)addr1);
+    printf("%p\n",(void*)addr2);// To print pointers we have to use %p and type cast the pointer to the generic void pointer type
+    
     return 0;
 }
 
