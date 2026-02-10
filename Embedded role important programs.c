@@ -300,7 +300,7 @@ int main(void)
 }
 
 
-/*-----------------------------------------------------POINTERS-------------------------------------------------*/
+/*---------------------------------------------------------------------------------------------------------POINTERS------------------------------------------------------------------------------------------------*/
 
 
 // 1. 
@@ -332,12 +332,30 @@ int main()
     return 0;
 }
 
-//3. Pointer to an entire array demonstration
+
+//3. Pointer to entire array demonstration
+// This shows up in: 2D arrays, Function parameters, DMA buffers, Embedded drivers, Memory-mapped registers
+#include <stdio.h>
+int main()
+{
+    int arr[] = {1,2,3,4};
+    int (*ptr)[4] = &arr; // always read this line inside out, like ptr is a pointer which points to an entire array of 4 integers
+    
+    printf("Address of arr is = %p, %p, %p\n",(void*)&arr,(void*)arr,(void*)ptr);
+    
+    printf("First element = %d\n",(*ptr)[0]);
+    printf("Second element = %d\n",(*ptr)[1]);
+    printf("Third element = %d\n",(*ptr)[2]);
+    printf("Fourth element = %d\n",(*ptr)[3]);
+    return 0;
+    
+}
+
 
 
 //4. Call-by-value vs Call-by-reference
 
-//5. Pointer to function
+//5. Pointer to a function
 
 
 
