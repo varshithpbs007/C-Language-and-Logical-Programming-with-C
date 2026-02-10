@@ -303,7 +303,21 @@ int main(void)
 /*-----------------------------------------------------POINTERS-------------------------------------------------*/
 
 
+// 1. 
+#include <stdio.h>
+void main()
+{
+    int i = 100;
+    int* ptr = &i;
+    printf("%d\n",i); // 100
+    printf("%d\n",ptr); // address of i
+    printf("%u\n",&i); // address of i, int variable
+    printf("%u\n",&ptr); // address of ptr, int pointer variable
+    printf("%d\n",*ptr); // 100
+    printf("%u\n",*(&i)); // 100
+}
 
+//2.
 
 
 
