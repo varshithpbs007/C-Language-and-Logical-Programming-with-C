@@ -354,6 +354,35 @@ int main()
 
 
 //4. Call-by-value vs Call-by-reference
+#include<stdio.h>
+void swap_1(int,int);
+void swap_2(int*,int*);
+int main()
+{
+    int x = 10;
+    int y = 20;
+    swap_1(x,y); // passing copies => call-by-value, i.e., here we pass copies of variables and original remain unchanged
+    printf("%d \t %d\n",x,y);
+    swap_2(&x,&y); // passing address => simulating call-by-reference, i.e., here we pass address of variables, so that the function can modify original variables
+    printf("%d \t %d\n",x,y);
+    return 0;
+}
+
+// Note that practically temp swap is recommended over xor swap
+
+void swap_1(int a, int b)
+{
+    a = a ^ b;
+    b = a ^ b;
+    a = a ^ b; // these variables are destroyed after fucntion is executed
+}
+
+void swap_2(int* m, int* n)
+{
+    *m = *m ^ *n;
+    *n = *m ^ *n;
+    *m = *m ^ *n;
+}
 
 //5. Pointer to a function
 
